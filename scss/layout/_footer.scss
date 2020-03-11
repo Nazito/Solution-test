@@ -1,0 +1,126 @@
+/*
+================================================================================
+|                                     FOOTER                                   |
+================================================================================
+*/
+footer {
+  text-align: left;
+  width: 100%;
+  min-width: $min-width;
+  order: 3;
+  -webkit-order: 3;
+
+  .project-btn {
+    padding: 0;
+  }
+
+  .logo {
+    padding: 0 20px;
+  }
+}
+.footer-wrapper {
+  margin: auto;
+  width: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-top: 1px solid #dfdfdf;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.footer_adaptive-container {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__nav_list {
+  display: flex;
+  align-items: center;
+}
+
+.footer__nav_item {
+  display: flex;
+  align-items: center;
+  margin: 0 25px;
+  position: relative;
+
+  a {
+    color: #72747c;
+  }
+
+  &.footer-btn {
+    margin-left: -10px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .footer-wrapper {
+    width: 100%;
+
+    &::before {
+      content: "";
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .footer__nav_item {
+    margin: 0 15px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .footer-wrapper {
+    justify-content: flex-start;
+
+    &::before {
+      content: "";
+      width: 100%;
+    }
+  }
+  .footer_adaptive-container {
+    flex-direction: row-reverse;
+    height: 91px;
+    flex-grow: 1;
+    justify-content: space-between;
+    max-width: 50%;
+  }
+
+  .footer__nav_list {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .right-list {
+    .footer__nav_item {
+      margin-bottom: 14px;
+    }
+  }
+
+  .footer__nav_item {
+    margin-bottom: 10px;
+
+    &.footer-btn {
+      margin-bottom: -4px;
+      margin-top: -6px;
+    }
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .footer_adaptive-container {
+    max-width: 64%;
+  }
+}

@@ -1,0 +1,420 @@
+/*--------------------------------------------*/
+/* HEAD POP-UP*/
+/*--------------------------------------------*/
+
+.head-popUp {
+  position: absolute;
+  top: 85px;
+  width: 100%;
+  padding: 20px 0;
+  background: rgba(255, 255, 255, 0.95);
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  &.active {
+    display: flex;
+  }
+}
+
+.head-popUp_overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.head-popUp_container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.head-popUp_container_item {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  z-index: 999;
+  cursor: pointer;
+
+  h5 {
+    text-align: left;
+    padding-left: 20px;
+  }
+}
+
+/*
+================================================================================
+|                                     HEADER                                   |
+================================================================================
+*/
+.head {
+  width: 100%;
+  height: 827px;
+  min-width: $min-width;
+  text-align: left;
+  order: 1;
+  -webkit-order: 1;
+  background: url("../img/terra.png") no-repeat,
+    url("../img/triangle1.svg") no-repeat,
+    url("../img/jazminttquaynor-105210-unsplash.png") no-repeat,
+    url("../img/traingle2.svg") no-repeat, url("../img/triagle3.png") no-repeat,
+    url("../img/Untitled.png") no-repeat,
+    url("../img/jazminttquaynor-1052103-unsplash.png") no-repeat;
+  background-size: auto, auto, 300px, auto, auto, auto, 470px;
+  background-position: 48px center, left top, left 135%, 95% 115%, right bottom,
+    right 115%, right bottom;
+  position: relative;
+}
+
+.head__owerlay_first-screen-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+
+  h1 {
+    margin-top: 150px;
+  }
+
+  article {
+    width: 360px;
+    margin: 28px auto;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 104.5%;
+    text-align: center;
+    margin-bottom: 45px;
+  }
+
+  h3 {
+    margin-top: 200px;
+  }
+}
+
+.head__owerlay_header-container {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 30px 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.head__owerlay_adaptive-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.head__nav_list {
+  display: flex;
+}
+
+.head__nav_item {
+  margin: 0 25px;
+  position: relative;
+
+  &.current::before {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    width: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 1px solid #575353;
+  }
+  a {
+    color: #72747c;
+  }
+}
+
+.container-icon {
+  display: flex;
+  margin-left: 25px;
+}
+
+.icon-item {
+  width: 56px;
+  height: 52px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.current {
+    background: url("../img/Polygon.svg") no-repeat;
+    background-size: contain;
+    background-position: right center;
+  }
+}
+
+.burger-menu {
+  width: 18px;
+  height: 13px;
+  display: none;
+  margin: 0 20px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  @include transition(0.5s);
+
+  span {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #72747c;
+  }
+
+  &.toggle-burger {
+    height: 1px;
+    span:nth-of-type(1) {
+      @include rotate(405deg);
+      @include transition(0.5s);
+      margin-bottom: -97px;
+    }
+
+    span:nth-of-type(2) {
+      width: 0;
+      height: 0;
+      @include transition(0.2s);
+    }
+
+    span:nth-of-type(3) {
+      @include rotate(-45deg);
+      @include transition(0.5s);
+    }
+  }
+}
+
+@media screen and (max-width: 1380px) {
+  .head__owerlay_first-screen-container {
+    align-items: flex-end;
+    padding-right: 140px;
+  }
+
+  .head {
+    background: url("../img/terra.png") no-repeat,
+      url("../img/triangle1.svg") no-repeat,
+      url("../img/jazminttquaynor-105210-unsplash.png") no-repeat,
+      url("../img/traingle2.svg") no-repeat,
+      url("../img/jazminttquaynor-1052103-unsplash.png") no-repeat;
+    background-size: auto, auto, 300px, auto, auto;
+    background-position: 48px center, left top, left 135%, 128% 87%, 124% 145px;
+    position: relative;
+  }
+
+  .head__owerlay_first-screen-container {
+    h1 {
+      margin-top: 100px;
+      font-size: 40px;
+      line-height: 110.13%;
+    }
+
+    article {
+      width: 360px;
+      margin: 28px auto;
+      font-weight: 200;
+      font-size: 16px;
+      line-height: 104.5%;
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    h3 {
+      margin-top: 200px;
+    }
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .head__owerlay_header-container {
+    width: 95%;
+  }
+
+  .head-popUp_container_item {
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+
+    h5 {
+      text-align: center;
+      padding: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .head {
+    background-position: -29px center, -44px 114px, left 135%, 155% 94%,
+      152% 172px;
+    padding-bottom: 50px;
+  }
+
+  .head__nav_item {
+    margin: 0 13px;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .head {
+    height: 880px;
+    background: url("../img/terra.png") no-repeat,
+      url("../img/triangle1.svg") no-repeat,
+      url("../img/jazminttquaynor-105210-unsplash.png") no-repeat,
+      url("../img/traingle2.svg") no-repeat,
+      url("../img/jazminttquaynor-1052103-unsplash.png") no-repeat;
+    background-size: auto, auto, 300px, auto;
+    background-position: -25px center, -50px 105px, left 143%, 163% 109%,
+      150% 145px;
+  }
+
+  .head__owerlay_first-screen-container {
+    h1 {
+      margin-top: 50px;
+    }
+
+    article {
+      width: 360px;
+      margin: 28px auto;
+      font-weight: 200;
+      font-size: 16px;
+      line-height: 104.5%;
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    h3 {
+      margin-top: 200px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .head__owerlay_first-screen-container {
+    align-items: flex-end;
+    padding-right: 70px;
+  }
+
+  .head {
+    background: url("../img/terra.png") no-repeat,
+      url("../img/triangle1.svg") no-repeat,
+      url("../img/jazminttquaynor-105210-unsplash.png") no-repeat,
+      url("../img/traingle2.svg") no-repeat,
+      url("../img/jazminttquaynor-1052103-unsplash.png") no-repeat;
+    background-size: auto, auto, 300px, auto;
+    background-position: -25px center, -50px 105px, left 143%, 181% 109%,
+      169% 145px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .head-popUp_container_item {
+    min-width: 120px;
+
+    h5 {
+      font-size: 16px;
+    }
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+
+  .head__nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #f8f8f8;
+  }
+
+  .head__nav_list {
+    flex-direction: column;
+  }
+
+  .head__nav_item {
+    padding: 4px 0;
+
+    &.current::before {
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      width: 90%;
+      left: 30px;
+      border-bottom: 1px solid #575353;
+    }
+  }
+
+  .icon-item {
+    width: 40.65px;
+    height: 40.65px;
+
+    img {
+      width: 85%;
+    }
+  }
+
+  .logo {
+    height: 40.65px;
+    width: auto;
+    margin: 0 20px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .head__owerlay_first-screen-container {
+    align-items: center;
+    padding: 0;
+  }
+
+  .head__owerlay_first-screen-container h1 {
+    margin-top: 60px;
+    margin-bottom: 340px;
+  }
+
+  .head {
+    height: 880px;
+    background: url("../img/terra.png") no-repeat,
+      url("../img/triangle1.svg") no-repeat,
+      url("../img/jazminttquaynor-105210-unsplash.png") no-repeat,
+      url("../img/traingle2.svg") no-repeat,
+      url("../img/jazminttquaynor-1052103-unsplash.png") no-repeat;
+    background-size: 346px, auto, 300px, 300px;
+    background-position: center center, -86px 105px, -108px 122%, 156% 101%,
+      451px 125px;
+  }
+}
+
+@media screen and (max-width: 555px) {
+  .head {
+    background: url("../img/terra.png") no-repeat,
+      url("../img/triangle1.svg") no-repeat,
+      url("../img/jazminttquaynor-105210-unsplash.png") no-repeat,
+      url("../img/traingle2.svg") no-repeat,
+      url("../img/jazminttquaynor-1052103-unsplash.png") no-repeat;
+    background-size: 346px, auto, 300px, 300px;
+    background-position: center center, -86px 105px, -118px 143%, 187% 110%,
+      291px 105px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .head {
+    background-position: center center, -86px 105px, -118px 126%, 237% 110%,
+      210px 105px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .head {
+    background-position: center center, -86px 105px, -160px 122%, 330px 112%,
+      210px 105px;
+  }
+}
